@@ -1,0 +1,24 @@
+.header
+  .header__title
+  
+    .header__title__icon
+      = link_to '#' do
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .header__title__name
+      = link_to '#' do
+        CHOICE
+
+  .header__user
+    .header__user__sign
+      = link_to "#" do
+        新規会員登録
+
+    .header__user__log
+      = link_to "#" do
+        ログイン
+    
+    .header__inner__nav__right__sign
+      -#   = link_to "マイページ", user_path(current_user), data: {"turbolinks" => false}
+      -# - else
+      -#   = link_to "#" do
+      -#     マイページ
