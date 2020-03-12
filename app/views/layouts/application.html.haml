@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title CHOICE
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width,initial-scale=1.0", :name => "viewport"}/
+    %link{:href => "pc.css", :media => "(min-width: 768px)", :rel => "stylesheet"}/
+    %link{:href => "sp.css", :media => "(max-width: 767px)", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Indie+Flower|Lobster&display=swap", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|M+PLUS+Rounded+1c&display=swap", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Lobster|M+PLUS+Rounded+1c&display=swap", :rel => "stylesheet"}/
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://js.pay.jp/", type: "text/javascript"} 
+    %include_gon 
+  %body
+    = yield
