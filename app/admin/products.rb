@@ -14,6 +14,7 @@ ActiveAdmin.register Product do
       f.actions
     end
   
+    
 
   permit_params :name, :company, :rank, :point, :body, product_images_attributes: [:id, :image, :reference, :_destroy]
 
