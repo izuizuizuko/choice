@@ -2,23 +2,26 @@
   .header__title
   
     .header__title__icon
-      = link_to '#' do
+      = link_to root_path do
         = icon('fas fa-3x','fa-tint', class: 'fa-tint')
     .header__title__name
-      = link_to '#' do
-        CHOICE
+      CHOICE
 
   .header__user
     .header__user__sign
-      = link_to "#" do
-        新規会員登録
+      - if user_signed_in?
+        = link_to "/users/sign_in" do
+          マイページ
+      - else
+        = link_to "/users/sign_up" do
+          新規会員登録
 
     .header__user__log
-      = link_to "#" do
-        ログイン
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
+          ログアウト
+      - else
+        = link_to "/users/sign_in" do
+          ログイン
     
-    .header__inner__nav__right__sign
-      -#   = link_to "マイページ", user_path(current_user), data: {"turbolinks" => false}
-      -# - else
-      -#   = link_to "#" do
-      -#     マイページ
+    
