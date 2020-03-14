@@ -2,6 +2,7 @@
 @import "bootstrap"; 
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "header";
-@import "main";
-@import "footer";
+@import "top/header";
+@import "top/main";
+@import "top/footer";
+@import "modules/user";
