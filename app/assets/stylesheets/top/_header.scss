@@ -20,14 +20,16 @@
     &__icon {
       a {
         text-decoration: none; 
-        color:  greenyellow;
+        color: rgba(69,179,224,1);
       }
       margin: auto;
     }
     &__name {
       a {
         text-decoration: none; 
-        color:  greenyellow;
+        background: linear-gradient( to right,  rgb(69,179,224) 28%, rgb(6, 111, 230) 72% );
+        -webkit-background-clip: text;
+        color: transparent;
       }
       margin: auto;
       font-family: 'Indie Flower', cursive;
@@ -40,7 +42,10 @@
       
     
     &__name {
-      color:  greenyellow;
+      text-decoration: none; 
+        background: linear-gradient( to right,  rgb(69,179,224) 28%, rgb(6, 111, 230) 72% );
+        -webkit-background-clip: text;
+        color: transparent;
     }
   }
   &__user {
@@ -51,7 +56,7 @@
     &__sign {
       a {
         text-decoration: none; 
-        color: greenyellow;
+        color: white;
       }
       margin: auto;
       font-size: 15px;
@@ -62,7 +67,7 @@
     &__log {
       a {
         text-decoration: none; 
-        color: greenyellow;
+        color: white;
       }
       text-decoration: none;
       margin: auto;

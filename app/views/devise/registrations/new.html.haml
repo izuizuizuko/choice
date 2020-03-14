@@ -1,27 +1,40 @@
-
-= render 'top/header'
-%html{:style => "background:linear-gradient(245deg, #fafbf9, #0c0c0d, #8a888e);width:100%;height:100vh"}
-%body{:style => "background:linear-gradient(245deg, #fafbf9, #0c0c0d, #8a888e);width:100%;height:100vh"}
-  .card.col-sm-6.mx-auto.mt-5
-
-    .card-body
-  
-      %h3.mt-1.mb-3 
-        %font{:face => "monospace"}新規登録
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 Create Account
+      %h3 
+        = link_to "/users/sign_in" do
+          Log in
+      %h4 
+        = link_to " Back",root_path
+         
+    .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
-        .form-group
-          = f.label :email, "メールアドレス", :class => "form-label"
-          = f.email_field :email, autocomplete: "email", :class => "form-control"
-        .form-group
-          = f.label :password, "パスワード (%s文字以上)"%@minimum_password_length, :class => "form-label"
-          = f.password_field :password, :class => "form-control"
-        .form-group
-          = f.label :password_confirmation, "もう一度パスワードを入力してください", :class => "form-label"
-          = f.password_field :password_confirmation, :class => "form-control"
+        -# = devise_error_messages!
+        .field
+          -# .field-label
+          -#   = f.label :name
+          -# .field-input
+          -#   -# = f.text_field :name, autofocus: true
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email
+        .field
+          .field-label
+            = f.label :password
+            %i (英数字8文字以上)
+          .field-input
+            = f.password_field :password, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "off"
+            
         .actions
-          = f.submit "アカウントを作成する", :class => "btn btn btn-dark btn-block"
-      .mt-2
-        すでにアカウントをお持ちですか？#{link_to "ログイン", new_user_session_path}
+          = f.submit "新規登録", class: 'btn'
+          
 
-= render 'top/footer'
+
