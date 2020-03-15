@@ -1,0 +1,11 @@
+.wrapper
+  = render "header"
+
+  %h1 New Answer
+  %div 質問情報
+  タイトル：#{@question.title}
+  %br/
+  内容：#{@question.body}
+  %br/
+  = render 'form', answer: @answer
+  = link_to 'Back', answers_path

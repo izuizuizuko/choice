@@ -1,0 +1,22 @@
+.wrapper
+  = render "header"
+%body
+  .container
+    %header.jumbotron.my-4
+      %h1.display-3 質問一覧
+      - if current_user.role == '質問者'
+        = link_to '質問する！', new_question_path, class: 'btn btn-primary btn-lg'
+    = search_form_for @q do |f|
+      = f.label :title_cont
+      = f.search_field :title_cont
+      = f.submit
+    .row.text-center
+      - @questions.each do |question|
+        .col-lg-3.col-md-6.mb-4
+          .card.h-100
+            %img.card-img-top{:alt => "", :src => "http://placehold.it/500x325"}/
+            .card-body
+              %h4.card-title= question.title
+              %p.card-text= question.body
+            .card-footer
+              = link_to '詳細', question

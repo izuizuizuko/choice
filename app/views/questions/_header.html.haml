@@ -1,0 +1,24 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    %a.navbar-brand{:href => "#"} Start Bootstrap
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          %li.nav-item
+            %span.nav-link
+              ログイン中:#{current_user.name}
+        %li.nav-item
+          - if user_signed_in? && current_user.role == '質問者'
+            = link_to "質問", "/questions", class: "nav-link"
+          - elsif user_signed_in? && current_user.role == '回答者'
+            = link_to "回答", "/questions", class: "nav-link"
+        %li.nav-item
+          - if user_signed_in?
+            %a= link_to "ログアウト", destroy_user_session_path, class: "nav-link", :method => :delete
+          - else
+            = link_to "ログイン", "/users/sign_in", class: "nav-link"
+%p.notice= notice
+%p.alert= alert
+= yield
