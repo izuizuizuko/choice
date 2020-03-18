@@ -8,7 +8,7 @@
 
 Things you may want to cover:
 
-#使用技術一覧
+# 使用技術一覧
 Ruby 2.5.1
 Ruby on Rails 5.0.7
 MySQL 5.6.43
@@ -18,7 +18,7 @@ AWS
 EC2
 Github
 
-require "使用
+require "使用"
 * System dependencies
 
 * Configuration
