@@ -1,15 +1,8 @@
 # CHOICE
 
-![choice]
 
+## 開発環境
 
-
-
-
-
-Things you may want to cover:
-
-##　開発環境
 * Ruby 2.5.1
 * Ruby on Rails 5.2.4.1
 * MySQL 5.6.43
@@ -18,7 +11,7 @@ Things you may want to cover:
 * AWS
 * EC2
 * Github
-require "使用技術"
+
 
 * System dependencies
 
