@@ -10,16 +10,16 @@
 Things you may want to cover:
 
 # 使用技術一覧
--Ruby 2.5.1
--Ruby on Rails 5.0.7
--MySQL 5.6.43
--Haml 5.1.2
--Sass 3.7.4
--AWS
--EC2
--Github
+* Ruby 2.5.1
+* Ruby on Rails 5.2.4.1
+* MySQL 5.6.43
+* Haml 
+* Sass 
+* AWS
+* EC2
+* Github
+require "使用技術"
 
-require "使用"
 * System dependencies
 
 * Configuration
