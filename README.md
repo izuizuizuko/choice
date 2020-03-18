@@ -1,5 +1,14 @@
 # CHOICE
 
+## :point_up: 概要
+QAコーナー付き眼薬検索サイト
+
+## url
+
+## :point_up:説明
+## 機能
+
+
 
 ## 開発環境
 
@@ -11,6 +20,9 @@
 * AWS
 * EC2
 * Github
+## License
+MIT
+
 
 
 * System dependencies
