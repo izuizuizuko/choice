@@ -9,7 +9,7 @@
 
 Things you may want to cover:
 
-###　開発環境
+##　開発環境
 * Ruby 2.5.1
 * Ruby on Rails 5.2.4.1
 * MySQL 5.6.43
