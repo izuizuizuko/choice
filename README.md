@@ -14,12 +14,13 @@ QAコーナー付き眼薬検索サイト
 
 ## :point_up:実装内容
 #####  フロントエンド
-* Haml/Sassでのマークアップ
+<br> * Haml/Sassでのマークアップ
 * Bootstrapでのマークアップ
 
 #####  サーバーサイド
 * ユーザー登録(/編集)機能(gem Deviseを使用)
-* 管理機能 (gem active adminを使用)
+* 管理機能(gem Activeadminを使用)
+* 検索機能(gem ransackを使用)
 
 ## 開発環境
 * Ruby 2.5.1
