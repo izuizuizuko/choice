@@ -1,14 +1,14 @@
 Rails.application.routes.draw do 
   root 'first#index'
   resources :questions
+  resources :top
   resources :answers, :except => [:new]
-  resources :reactions, :except => [:new]
-  get 'top' => 'top#index'
-  get 'questions' => 'questions#index'
-  get 'answers/new/:questionId' => 'answers#new'
-  get 'reactions/new/:answerId' => 'reactions#new'
-
-
+  resources :products 
+  resources :images 
+  resources :contacts 
+  resources :flowers 
+  resources :hordeolums
+  resources :kids
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_082131) do
+ActiveRecord::Schema.define(version: 2020_03_19_123728) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -48,9 +48,101 @@ ActiveRecord::Schema.define(version: 2020_03_15_082131) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "contact_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
+    t.string "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "flower_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "flower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "flowers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hordeolum_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "hordeolum_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hordeolums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
     t.string "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kid_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "kid_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,9 +152,15 @@ ActiveRecord::Schema.define(version: 2020_03_15_082131) do
     t.string "company"
     t.string "rank"
     t.string "point"
-    t.text "body"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
   end
 
   create_table "question_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,14 +199,17 @@ ActiveRecord::Schema.define(version: 2020_03_15_082131) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "name", null: false
     t.string "email", default: "", null: false
-    t.string "role", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "role", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

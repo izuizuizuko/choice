@@ -5,17 +5,14 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    @questions = Question.all
     @q = Question.ransack(params[:q])
-    @@user_type = current_user.role
-    if @@user_type == '質問者'
-      @questions = current_user.questions
+    if params[:q]
+      @questions = @q.result(distinct: true)
     else
-      if params[:q]
-        @questions = @q.result(distinct: true)
-      else
-        @questions = Question.all
-      end
+      @questions = Question.all
     end
+    
   end
 
   # GET /questions/1
@@ -65,14 +62,13 @@ class QuestionsController < ApplicationController
     end
   end
  
+
+   
   def destroy
     @question.destroy
-    respond_to do |format|
-      format.html {redirect_to questions_url, notice: 'Question was successfully destroyed.'}
-      format.json {head :no_content}
-    end
+    # redirect_to root_path if @question.destroy && @question.user_id == @question_user.id
   end
- 
+
   private
  
   def set_question

@@ -6,6 +6,12 @@ class AnswersController < ApplicationController
 
   def index
     @questions = Question.all
+    @q = Question.ransack(params[:q])
+    if params[:q]
+      @questions = @q.result(distinct: true)
+    else
+      @questions = Question.all
+    end
   end
 
   def new

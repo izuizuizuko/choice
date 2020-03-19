@@ -1,22 +1,49 @@
-.wrapper
-  = render "header"
-%body
-  .container
-    %header.jumbotron.my-4
-      %h1.display-3 質問一覧
-      - if current_user.role == '質問者'
-        = link_to '質問する！', new_question_path, class: 'btn btn-primary btn-lg'
-    = search_form_for @q do |f|
-      = f.label :title_cont
-      = f.search_field :title_cont
-      = f.submit
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark{:style => "background-color:black;"}
+  .navbar
+    .navbar__title
+      .navbar__title__icon
+        = link_to root_path do
+          = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .navbar__title__name
+      = link_to "CHOICE", "top" 
+    .navbar__title__title 
+
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item.ml-2{:style => "color:white;"}
+          = search_form_for @q do |f|
+            = f.search_field :body_cont
+            = f.submit
+        %li.nav-item
+          %li.nav-item.ml-4
+            = link_to '質問一覧', "/questions", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "QAコーナートップ", "/top", class: "btn btn-outline-light"
+          -# %li.nav-item.ml-2
+          -#   = link_to "回答する", "/answers", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+          .nav-item
+          = link_to "ログアウト", "/users/sign_out", class: 'btn btn-outline-danger', :method => :delete
+
+.container
+  .container__box 
+    .container__box.display-3 質問一覧
+    
     .row.text-center
-      - @questions.each do |question|
-        .col-lg-3.col-md-6.mb-4
-          .card.h-100
-            %img.card-img-top{:alt => "", :src => "http://placehold.it/500x325"}/
-            .card-body
-              %h4.card-title= question.title
-              %p.card-text= question.body
-            .card-footer
-              = link_to '詳細', question
+      %table.table
+        %thead
+          %tr
+            %th Title
+            %th 内容
+        %tbody
+          - @questions.each do |question|
+            %tr
+              %td= question.title
+              %td= question.body 
+
+              %td= link_to "詳細", question, class: 'btn btn-outline-dark'
+            
+= render "footer" 
+

@@ -32,11 +32,11 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
-        .field
-          .field-label
-            = f.label :role
-          .field-input
-            = f.select :role, [["質問者", "質問者"], ["回答者", "回答者"]], :prompt => "選択してください"
+        -# .field
+        -#   .field-label
+        -#     = f.label :role
+        -#   .field-input
+        -#     = f.select :role, [["質問者", "質問者"], ["回答者", "回答者"]], :prompt => "選択してください"
 
         .actions
           = f.submit "Create Account", class: 'btn'

@@ -10,8 +10,8 @@
   .header__user
     .header__user__sign
       - if user_signed_in?
-        = link_to "/users/sign_in" do
-          マイページ
+        = link_to "/top" do
+          QAコーナー
       - else
         = link_to "/users/sign_up" do
           新規会員登録
