@@ -3,14 +3,14 @@
 ## :droplet:概要
 QAコーナー付き眼薬検索サイト
 
-## :droplet:URL
-今後デプロイ予定
+## :globe_with_meridians:URL
+今後デプロイ予定 :soon:
 
-## :droplet:説明
+## :point_up_2:説明
 * 希望のジャンルを選択後、一覧・詳細の表示
 * 新規登録・ログイン後はQAコーナーが使用可能
 
-## :droplet:機能
+## :computer:機能
 ### ①トップ画面
 希望のジャンルを選択できます
 ![choice](https://user-images.githubusercontent.com/59868344/77017437-dc101b80-69bd-11ea-95b5-3a6302b4eb42.png)
@@ -30,7 +30,7 @@ QAコーナー付き眼薬検索サイト
 検索バーを利用して全ての質問一覧から本文を検索し一致した質問を表示できます
 ![choice](https://user-images.githubusercontent.com/59868344/77019022-ce10c980-69c2-11ea-9ec9-295535d812a4.png)
 
-## :droplet:実装内容
+## :memo::実装内容
 #####  フロントエンド
 * Haml/Sassでのマークアップ
 * Bootstrapでのマークアップ
@@ -40,7 +40,7 @@ QAコーナー付き眼薬検索サイト
 * 管理機能(gem Activeadminを使用)
 * 検索機能(gem ransackを使用)
 
-## :droplet:開発環境
+## :mortar_board:開発環境
 * Ruby 2.5.1
 * Ruby on Rails 5.2.4.1
 * MySQL 5.6.43
@@ -50,9 +50,32 @@ QAコーナー付き眼薬検索サイト
 * EC2
 * Github
 
-## :droplet:テスト
-今後実施予定
+## :mag:テスト
+今後実施予定 :soon:
 
-## :droplet:License
+
+## :speech_balloon:Usage
+
+$ git clone https://github.com/izuizuizuko/choice.git<br>
+$ cd choice<br>
+$ bundle install<br>
+$ rails db:create<br>
+$ rails db:migrate<br>
+$ rails s
+👉 http://localhost:3000
+
+
+## :fire:課題と今後の実装
+* 課題<br>
+&nbsp;・Bootstrap使用箇所と未使用箇所でのレイアウトの違いが発生<br>
+&nbsp;・Activeadminを使用し管理画面からのみの投稿にしたた為、イメージ画像の取り込みのコード量が多い<br>
+&nbsp;・背景画層の設定にムラが生じているのでレイアウトにばらつきがある<br>
+* 今後の実装<br>
+&nbsp;・検索方法の追加（タグ対応）<br>
+&nbsp;・いいね機能の追加<br>
+&nbsp;・Twitter/Facebook/Googleアカウントでのログイン機能の追加<br>
+&nbsp;・上記課題の解決<br>
+
+## :ok_hand:License
 MIT
 
