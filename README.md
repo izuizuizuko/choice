@@ -30,7 +30,7 @@ QAコーナー付き眼薬検索サイト
 検索バーを利用して全ての質問一覧から本文を検索し一致した質問を表示できます
 ![choice](https://user-images.githubusercontent.com/59868344/77019022-ce10c980-69c2-11ea-9ec9-295535d812a4.png)
 
-## :point_up:実装内容
+## :droplet:実装内容
 #####  フロントエンド
 * Haml/Sassでのマークアップ
 * Bootstrapでのマークアップ
@@ -40,7 +40,7 @@ QAコーナー付き眼薬検索サイト
 * 管理機能(gem Activeadminを使用)
 * 検索機能(gem ransackを使用)
 
-## 開発環境
+## :droplet:開発環境
 * Ruby 2.5.1
 * Ruby on Rails 5.2.4.1
 * MySQL 5.6.43
@@ -50,9 +50,9 @@ QAコーナー付き眼薬検索サイト
 * EC2
 * Github
 
-## テスト
+## :droplet:テスト
 今後実施予定
 
-## License
+## :droplet:License
 MIT
 
