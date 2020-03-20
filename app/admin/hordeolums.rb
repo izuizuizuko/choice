@@ -1,4 +1,5 @@
-ActiveAdmin.register Hordeolum do  form do |f|
+ActiveAdmin.register Hordeolum do 
+  
   form do |f|
     f.inputs '商品' do
       f.input :name
@@ -23,5 +24,5 @@ ActiveAdmin.register Hordeolum do  form do |f|
 
 
   permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, fordeolum_images_attribut: [:id, :image, :reference, :_destroy]
-  # params.require(:product).permit(:rank, :point, :body, :product_images_attribut: [:id, :image, :reference, :_destroy])
+
 end
