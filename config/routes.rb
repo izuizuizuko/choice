@@ -1,18 +1,17 @@
 Rails.application.routes.draw do 
-  
-  resources :rests
-  resources :strains
   root 'first#index'
+  resources :top, only: [:new, :show, :index, :edit] 
   resources :questions
-  resources :top
-  resources :answers, :except => [:new]
-  resources :products 
+  resources :answers
+  resources :products  
   resources :images 
   resources :contacts 
-  resources :flowers 
+  resources :flowers
   resources :hordeolums
   resources :kids
-  resources :reds
+  resources :red
+  resources :rests
+  resources :strains
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'
@@ -23,3 +22,4 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
+
