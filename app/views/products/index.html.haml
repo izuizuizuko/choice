@@ -1,3 +1,13 @@
+
+  
+
+- @products.each do |product| 
+  -# = image_tag product.images.image.to_s, size: "200x200"
+  = product.name
+
+  = product.company
+  = product.point
+-# @question.answers.first.attributes
 %h1 Listing reds
 
 %table
@@ -28,13 +38,3 @@
         %td= red.pit1
         %td= red.pit2
         %td= red.pit3
-        
-        %td= red.advice3
-        %td= red.picture
-        %td= link_to 'Show', red
-        %td= link_to 'Edit', edit_red_path(red)
-        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Red', new_red_path
