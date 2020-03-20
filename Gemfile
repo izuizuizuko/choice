@@ -53,6 +53,7 @@ end
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'paperclip'
 
 
 group :production do
