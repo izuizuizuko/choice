@@ -8,7 +8,6 @@
           Create Account
       %h4 
         = link_to " Back",root_path
-          
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -23,14 +22,9 @@
             .field-input
               = f.password_field :password, autocomplete: "off"
           .actions
-            = f.submit "ログイン", class: 'btn btn-dark'
- 
- 
-
-
-
-
-
+            = f.submit "Log in", class: 'btn'
+      
+    
 
 
 

@@ -1,0 +1,43 @@
+= form_for @strain do |f|
+  - if @strain.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@strain.errors.count, "error")} prohibited this strain from being saved:"
+      %ul
+        - @strain.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :company
+    = f.text_field :company
+  .field
+    = f.label :rank
+    = f.text_field :rank
+  .field
+    = f.label :point
+    = f.text_field :point
+  .field
+    = f.label :pit1
+    = f.text_field :pit1
+  .field
+    = f.label :pit2
+    = f.text_field :pit2
+  .field
+    = f.label :pit3
+    = f.text_field :pit3
+  .field
+    = f.label :advice1
+    = f.text_field :advice1
+  .field
+    = f.label :advice2
+    = f.text_field :advice2
+  .field
+    = f.label :advice3
+    = f.text_field :advice3
+  .field
+    = f.label :picture
+    = f.text_field :picture
+  .actions
+    = f.submit 'Save'

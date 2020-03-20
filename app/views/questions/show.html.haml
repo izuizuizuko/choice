@@ -1,0 +1,49 @@
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark{:style => "background-color:black;"}
+  .navbar
+    .navbar__title
+      .navbar__title__icon
+        = link_to root_path do
+          = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .navbar__title__name
+      = link_to "CHOICE", "top" 
+    .navbar__title__title 
+
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          %li.nav-item.ml-4
+            = link_to '質問一覧', "/questions", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "QAコーナートップ", "/top", class: "btn btn-outline-light"
+          -# %li.nav-item.ml-2
+          -#   = link_to "回答する", "/answers", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+          .nav-item
+          = link_to "ログアウト", "/users/sign_out", class: 'btn btn-outline-danger', :method => :delete
+
+.containershow
+  .containershow__card-title
+    .containershow__card-title__top
+      = link_to '回答する', "/answers/new/#{@question.id}", class: "btn btn-lg btn-outline-secondary " 
+      .containershow__card-title__answer 
+        タイトル：#{@question.title}
+        - @question.tags.each do |tag|
+          %button.btn.btn-info= tag.name
+
+  .containershow__card-body
+    内容:
+    = @question.body
+    %br/
+    質問者：
+    %span{:class => "#{"user_color" if current_user.id == @question.user_id}"}= user_info(@question.user_id).name
+  .containershow__row
+    - @question.answers.each do |answer|
+      .col-lg-9.col-md-11
+        .card.h-100
+          %div &nbsp;&nbsp&nbsp;&nbsp;#{answer.body}
+          %p.text-right
+            %span{:class => "#{"user_color" if current_user.id == answer.user_id}"}
+              回答者：#{user_info(answer.user_id).name}&nbsp;&nbsp&nbsp;&nbsp
+= render "footer" 

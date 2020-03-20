@@ -1,0 +1,89 @@
+.header
+  .header__title
+  
+    .header__title__icon
+      = link_to root_path do
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .header__title__name
+      CHOICE
+
+  .header__user
+    .header__user__sign
+      - if user_signed_in?
+        = link_to "/top" do
+          QAコーナー
+      - else
+        = link_to "/users/sign_up" do
+          新規会員登録
+
+    .header__user__log
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
+          ログアウト
+      - else
+        = link_to "/users/sign_in" do
+          ログイン
+
+.drytop
+  .drytop__box
+    .drytop__box__pic  
+      - @strain.strain_images.each.with_index do |image, index|
+        = image_tag image.image_url, size: "400x300", class: "image-sub"
+    .drytop__box__cp
+      = @strain.picture
+    .drytop__box__component
+      .drytop__box__component__rank
+        .drytop__box__component__rank__2
+          = @strain.rank
+      .drytop__box__component__company
+        .drytop__box__component__company__3
+          = @strain.company
+      .drytop__box__component__name
+        .drytop__box__component__name__1
+          = @strain.name  
+
+  .drytop__body
+    .drytop__body__point
+      = @strain.point
+
+    .drytop__body__com
+      .drytop__body__com__icon
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+      .drytop__body__com__word
+        ココがポイント
+
+    .drytop__body__pit 
+      .drytop__body__pit__f
+        = "①#{@strain.pit1}"
+      .drytop__body__pit__s
+        = "②#{@strain.pit2}"
+      .drytop__body__pit__t
+        = "③#{@strain.pit3}"
+
+
+    .drytop__body__com2 
+      .drytop__body__com__icon
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+      .drytop__body__com__word
+        こんな方におすすめ！
+
+    .drytop__body__advice
+      .drytop__body__advice__one
+        = "①#{@strain.advice1}"
+      .drytop__body__advice__two
+        = "①#{@strain.advice2}"
+      .drytop__body__advice__three
+        = "①#{@strain.advice3}"
+
+.footer
+  .footer__shop
+    .footer__shop__icon
+      .footer__shop__icon__amazon
+        = link_to 'https://www.amazon.co.jp/%E3%83%89%E3%83%A9%E3%83%83%E3%82%B0%E3%82%B9%E3%83%88%E3%82%A2-%E3%82%B5%E3%83%97%E3%83%AA%E3%83%A1%E3%83%B3%E3%83%88-%E6%97%A5%E7%94%A8%E5%93%81-%E5%8C%BB%E8%96%AC%E5%93%81-%E9%80%9A%E8%B2%A9/b?ie=UTF8&node=160384011' do
+          = icon('fas fa-2x','fab fa-amazon', class: 'fab fa-amazon')
+      .footer__shop__icon__yahoo
+        = link_to 'https://lohaco.jp/' do
+          = icon('fas fa-2x','fas fab fa-yahoo', class: 'yahoo')
+      .footer__shop__icon__rakuten
+        = link_to 'https://www.rakuten.co.jp/' do
+          = icon('fas fa-2x','fas fa-registered', class: 'rakuten')

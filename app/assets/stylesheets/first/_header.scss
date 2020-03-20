@@ -1,0 +1,82 @@
+*{
+  margin: 0px;
+}
+
+.header {
+  z-index: 6;
+  position: absolute;
+  position: fixed;
+  padding: 0 60px;
+  background-color: black;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 0px;
+  &__title {
+    
+    display: flex;
+    justify-content: space-between;
+    &__icon {
+      a {
+        text-decoration: none; 
+        color: rgba(69,179,224,1);
+      }
+      margin: auto;
+    }
+    &__name {
+      a {
+        text-decoration: none; 
+        background: linear-gradient( to right,  rgb(69,179,224) 28%, rgb(6, 111, 230) 72% );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      margin: auto;
+      font-family: 'Indie Flower', cursive;
+      font-weight: bold;
+      font-size: 33px;
+      padding-left: 5px;
+
+      
+    }
+      
+    
+    &__name {
+      text-decoration: none; 
+        background: linear-gradient( to right,  rgb(69,179,224) 28%, rgb(6, 111, 230) 72% );
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+  }
+  &__user {
+    display: flex;
+    
+  
+
+    &__sign {
+      a {
+        text-decoration: none; 
+        color: white;
+      }
+      margin: auto;
+      font-size: 15px;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: bold;
+    }
+    
+    &__log {
+      a {
+        text-decoration: none; 
+        color: white;
+      }
+      text-decoration: none;
+      margin: auto;
+      padding-left: 20px;
+      font-size: 15px;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: bold;
+    }
+
+
+  }
+}

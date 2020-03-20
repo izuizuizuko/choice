@@ -1,0 +1,36 @@
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark{:style => "background-color:black;"}
+
+  .container
+    .container__navbar-brand
+      .container__navbar-brand__icon
+        = link_to root_path do
+          = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .container__navbar-brand__title  
+      = link_to "CHOICE", "top" 
+    .container__navbar-brand__title  
+   
+
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item.ml-2{:style => "color:white;"}
+          = search_form_for @q do |f|
+            = f.search_field :body_cont
+            = f.submit
+        -# %li.nav-item
+        -#   %span.nav-link{:style => "color:white;"}
+        -#     ようこそ！&nbsp;&nbsp;#{current_user.name}&nbsp;さん
+        %li.nav-item
+          %li.nav-item.ml-4
+            = link_to '質問一覧', "/questions", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "質問する", "/questions/new", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "回答する", "/answers", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+          .nav-item
+          = link_to "ログアウト", "/users/sign_out", class: 'btn btn-outline-danger', :method => :delete
+= yield
+
+ 

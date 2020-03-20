@@ -1,0 +1,19 @@
+= form_for @flower do |f|
+  - if @flower.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@flower.errors.count, "error")} prohibited this flower from being saved:"
+      %ul
+        - @flower.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :company
+    = f.text_field :company
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,45 @@
+%h1 Listing rests
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Rank
+      %th Point
+      %th Rank
+      %th Point
+      %th Pit1
+      %th Pit2
+      %th Pit3
+      %th Advice1
+      %th Advice2
+      %th Advice3
+      %th Picture
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rests.each do |rest|
+      %tr
+        %td= rest.name
+        %td= rest.company
+        %td= rest.rank
+        %td= rest.point
+        %td= rest.rank
+        %td= rest.point
+        %td= rest.pit1
+        %td= rest.pit2
+        %td= rest.pit3
+        %td= rest.advice1
+        %td= rest.advice2
+        %td= rest.advice3
+        %td= rest.picture
+        %td= link_to 'Show', rest
+        %td= link_to 'Edit', edit_rest_path(rest)
+        %td= link_to 'Destroy', rest, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Rest', new_rest_path
