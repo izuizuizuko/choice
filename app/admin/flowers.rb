@@ -12,7 +12,6 @@ ActiveAdmin.register Flower do
       f.input :advice2
       f.input :advice3
       f.input :picture
-      f.input :flower_image, :as => :file
       f.has_many :flower_images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image
@@ -26,6 +25,4 @@ ActiveAdmin.register Flower do
   permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, flower_images_attribut: [:id, :image, :reference, :_destroy]
   # params.require(:product).permit(:rank, :point, :body, :product_images_attribut: [:id, :image, :reference, :_destroy])
 end
-
-
 

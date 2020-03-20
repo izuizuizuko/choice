@@ -14,7 +14,6 @@ ActiveAdmin.register Kid do
       f.input :advice2
       f.input :advice3
       f.input :picture
-      f.input :kid_image, :as => :file
       f.has_many :kid_images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image

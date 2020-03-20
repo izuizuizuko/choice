@@ -1,7 +1,5 @@
 ActiveAdmin.register Product do
 
-  
-  #formのコード
   form do |f|
     f.inputs '商品' do
       f.input :name
@@ -15,8 +13,7 @@ ActiveAdmin.register Product do
       f.input :advice2
       f.input :advice3
       f.input :picture
-      f.input :image, :as => :file
-      f.has_many :images, allow_destroy: true,
+      f.has_many :product_images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image
       end
@@ -26,6 +23,6 @@ ActiveAdmin.register Product do
 
 
 
-  permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, images_attribut: [:id, :image, :reference, :_destroy]
+  permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, product_images_attribut: [:id, :image, :reference, :_destroy]
   # params.require(:product).permit(:rank, :point, :body, :product_images_attribut: [:id, :image, :reference, :_destroy])
 end
