@@ -1,18 +1,17 @@
 Rails.application.routes.draw do 
-  
-  resources :rests
-  resources :strains
   root 'first#index'
-  resources :questions
-  resources :top
+  resources :questions, only: [:new, :show, :index, :edit] do
+  resources :top, only: [:new, :show, :index, :edit] do
   resources :answers, :except => [:new]
-  resources :products 
-  resources :images 
-  resources :contacts 
-  resources :flowers 
-  resources :hordeolums
-  resources :kids
-  resources :reds
+  resources :products , only: [:new, :show, :index, :edit] do
+  resources :images , only: [:new, :show, :index, :edit] do
+  resources :contacts , only: [:new, :show, :index, :edit] do
+  resources :flowers , only: [:new, :show, :index, :edit] do
+  resources :hordeolums, only: [:new, :show, :index, :edit] do
+  resources :kids, only: [:new, :show, :index, :edit] do
+  resources :reds, only: [:new, :show, :index, :edit] do
+  resources :rests, only: [:new, :show, :index, :edit] do
+  resources :strains, only: [:new, :show, :index, :edit] do
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'
