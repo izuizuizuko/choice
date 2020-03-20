@@ -1,6 +1,7 @@
 Rails.application.routes.draw do 
   root 'first#index'
   resources :top, only: [:new, :show, :index, :edit] 
+
   resources :questions
   resources :answers
   resources :products  
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :red
   resources :rests
   resources :strains
+
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'

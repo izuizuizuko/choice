@@ -1,4 +1,4 @@
-%h1 Listing hordeolums
+%h1 Listing reds
 
 %table
   %thead
@@ -6,36 +6,35 @@
       %th Name
       %th Company
       %th Rank
-
+      %th Point
+      %th Point
       %th Pit1
       %th Pit2
       %th Pit3
-      %th Advice1
-      %th Advice2
-      %th Advice3
+      
       %th Picture
       %th
       %th
       %th
 
   %tbody
-    - @hordeolums.each do |hordeolum|
+    - @reds.each do |red|
       %tr
-        %td= hordeolum.name
-        %td= hordeolum.company
-        %td= hordeolum.rank
-   
-        %td= hordeolum.pit1
-        %td= hordeolum.pit2
-        %td= hordeolum.pit3
-        %td= hordeolum.advice1
-        %td= hordeolum.advice2
-        %td= hordeolum.advice3
-        %td= hordeolum.picture
-        %td= link_to 'Show', hordeolum
-        %td= link_to 'Edit', edit_hordeolum_path(hordeolum)
-        %td= link_to 'Destroy', hordeolum, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= red.name
+        %td= red.company
+        %td= red.rank
+        %td= red.point
+        %td= red.point
+        %td= red.pit1
+        %td= red.pit2
+        %td= red.pit3
+        
+        %td= red.advice3
+        %td= red.picture
+        %td= link_to 'Show', red
+        %td= link_to 'Edit', edit_red_path(red)
+        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Hordeolum', new_hordeolum_path
+= link_to 'New Red', new_red_path

@@ -1,5 +1,6 @@
 ActiveAdmin.register Contact do
 
+  
   form do |f|
     f.inputs '商品' do
       f.input :name
@@ -13,7 +14,6 @@ ActiveAdmin.register Contact do
       f.input :advice2
       f.input :advice3
       f.input :picture
-      f.input :contact_image, :as => :file
       f.has_many :contact_images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image
@@ -27,5 +27,3 @@ ActiveAdmin.register Contact do
   permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, contact_images_attribut: [:id, :image, :reference, :_destroy]
   # params.require(:product).permit(:rank, :point, :body, :product_images_attribut: [:id, :image, :reference, :_destroy])
 end
-
-
