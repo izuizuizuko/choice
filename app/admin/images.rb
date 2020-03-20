@@ -11,8 +11,6 @@ ActiveAdmin.register Image do
     column :comoany
     column :rank
     column :point
-    column :product_id
-    column :contact_id
     column :updated_at
     actions
   end
@@ -30,7 +28,7 @@ ActiveAdmin.register Image do
     end
   end
  
-  permit_params :image, :product_id, :contact_id
+  permit_params :image, :product_id, 
 end
 
   # See permitted parameters documentation:
