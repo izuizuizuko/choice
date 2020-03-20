@@ -1,5 +1,5 @@
 ActiveAdmin.register Hordeolum do 
-  
+
   form do |f|
     f.inputs '商品' do
       f.input :name
@@ -13,7 +13,7 @@ ActiveAdmin.register Hordeolum do
       f.input :advice2
       f.input :advice3
       f.input :picture
-      f.has_many :fordeolum_images, allow_destroy: true,
+      f.has_many :hordeolum_images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image
       end
@@ -23,6 +23,6 @@ ActiveAdmin.register Hordeolum do
 
 
 
-  permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, fordeolum_images_attribut: [:id, :image, :reference, :_destroy]
+  permit_params :name, :company, :rank, :point, :pit1, :pit2, :pit3, :advice1, :advice2, :advice3, :picture, hordeolum_images_attribut: [:id, :image, :reference, :_destroy]
 
 end
