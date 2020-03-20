@@ -1,86 +1,40 @@
--# .header
--#   .header__title
-  
--#     .header__title__icon
--#       = link_to root_path do
--#         = icon('fas fa-3x','fa-tint', class: 'fa-tint')
--#     .header__title__name
--#       CHOICE
+%h1 Listing reds
 
--#   .header__user
--#     .header__user__sign
--#       - if user_signed_in?
--#         = link_to "/top" do
--#           QAコーナー
--#       - else
--#         = link_to "/users/sign_up" do
--#           新規会員登録
+%table
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Rank
+      %th Point
+      %th Point
+      %th Pit1
+      %th Pit2
+      %th Pit3
+      
+      %th Picture
+      %th
+      %th
+      %th
 
--#     .header__user__log
--#       - if user_signed_in?
--#         = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
--#           ログアウト
--#       - else
--#         = link_to "/users/sign_in" do
--#           ログイン
-
--# - @kid.kid_images.each.with_index do |image, index|
--#         = image_tag image.image_url, size: "400x300", class: "image-sub"
-    
-
-
-
--# - @products.each do |product| 
-
-  
-
-- @products.each do |product| 
-  = image_tag product.images.image.to_s, size: "200x200"
-  = product.name
-
-  = product.company
-  = product.point
--# @question.answers.first.attributes
--# - @images.each do |image| 
--#   - result = image.image_url
--# = result
-  -#   -#     -# %td= image_url product.images.to_s, size: "200x200"
-  -#     -# %td= link_to 'Show', product
-  -#  = image_tag @productimage.image_url, size: "100x100"
-  -# - @product.images each do |image|
-    /mage_tag image.image_url, size: "400x300", class: "image-sub"
-    -# %h1 Blog
-    -# - @product.each do |product| 
-    -# = image_tag(@product.images[0].image.thumb, {:style => 'width:100%; height:45;'}) 
-    -#   -.main__pick__box__lists
+  %tbody
+    - @reds.each do |red|
+      %tr
+        %td= red.name
+        %td= red.company
+        %td= red.rank
+        %td= red.point
+        %td= red.point
+        %td= red.pit1
+        %td= red.pit2
+        %td= red.pit3
         
-        -#       %thead
-      -#         %tr
-      -#           %th Name
-      -#           %th Company
-      -#           %th Point
-              
-      -#       %tbody
-            
-      -#           %tr
-                
-      -#             %td= product.name
-      -#             %td= product.company
-      -#             %td= product.point
-      -#             %td= image_url product.images.to_s, size: "200x200"
-      -#             %td= link_to 'Show', product
-                
-      -#             -# = image_tag image.image_url, size: "150x150", class: "image-sub"
-      -# -# .main__pick__box__lists__list
-      -# -#             = link_to product_path(item), class:"main__pick__box__lists__list__a" do
-      -#               .product-image
-      -#                 - if item.status != "2"
-      -#                 - else
-      -#                   .sold-date
-      -#                     %p
-      -#                 - if item.images.blank?
-      -#                 - else
-      -#                   = image_tag "#{item.images[0].image}", class: "product-image__i1
+        %td= red.advice3
+        %td= red.picture
+        %td= link_to 'Show', red
+        %td= link_to 'Edit', edit_red_path(red)
+        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
 
+%br
 
-
+= link_to 'New Red', new_red_path

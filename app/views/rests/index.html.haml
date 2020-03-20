@@ -1,4 +1,4 @@
-%h1 Listing rests
+%h1 Listing reds
 
 %table
   %thead
@@ -7,39 +7,34 @@
       %th Company
       %th Rank
       %th Point
-      %th Rank
       %th Point
       %th Pit1
       %th Pit2
       %th Pit3
-      %th Advice1
-      %th Advice2
-      %th Advice3
+      
       %th Picture
       %th
       %th
       %th
 
   %tbody
-    - @rests.each do |rest|
+    - @reds.each do |red|
       %tr
-        %td= rest.name
-        %td= rest.company
-        %td= rest.rank
-        %td= rest.point
-        %td= rest.rank
-        %td= rest.point
-        %td= rest.pit1
-        %td= rest.pit2
-        %td= rest.pit3
-        %td= rest.advice1
-        %td= rest.advice2
-        %td= rest.advice3
-        %td= rest.picture
-        %td= link_to 'Show', rest
-        %td= link_to 'Edit', edit_rest_path(rest)
-        %td= link_to 'Destroy', rest, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= red.name
+        %td= red.company
+        %td= red.rank
+        %td= red.point
+        %td= red.point
+        %td= red.pit1
+        %td= red.pit2
+        %td= red.pit3
+        
+        %td= red.advice3
+        %td= red.picture
+        %td= link_to 'Show', red
+        %td= link_to 'Edit', edit_red_path(red)
+        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Rest', new_rest_path
+= link_to 'New Red', new_red_path

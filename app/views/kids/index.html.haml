@@ -1,4 +1,4 @@
-%h1 Listing kids
+%h1 Listing reds
 
 %table
   %thead
@@ -6,38 +6,35 @@
       %th Name
       %th Company
       %th Rank
+      %th Point
+      %th Point
       %th Pit1
       %th Pit2
       %th Pit3
-      %th Advice1
-      %th Advice2
-      %th Advice3
+      
       %th Picture
       %th
       %th
       %th
 
   %tbody
-    - @kids.each do |kid|
+    - @reds.each do |red|
       %tr
-        %td= kid.name
-        %td= kid.company
-        %td= kid.rank
-        %td= kid.point
-        %td= kid.pit1
-        %td= kid.pit2
-        %td= kid.pit3
-        %td= kid.advice1
-        %td= kid.advice2
-        %td= kid.advice3
-        %td= image tag kid.image.to_s
-
-        - @kids.each do |kid| 
-          = image_tag @kidimage.to_s, size: "200x200"
-        %td= link_to 'Show', kid
-        %td= link_to 'Edit', edit_kid_path(kid)
-        %td= link_to 'Destroy', kid, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= red.name
+        %td= red.company
+        %td= red.rank
+        %td= red.point
+        %td= red.point
+        %td= red.pit1
+        %td= red.pit2
+        %td= red.pit3
+        
+        %td= red.advice3
+        %td= red.picture
+        %td= link_to 'Show', red
+        %td= link_to 'Edit', edit_red_path(red)
+        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Kid', new_kid_path
+= link_to 'New Red', new_red_path
