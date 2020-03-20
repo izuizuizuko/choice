@@ -9,7 +9,7 @@ class CreateKids < ActiveRecord::Migration[5.2]
       t.string :pit2
       t.string :pit3
       t.string :advice1
-      t.string :avdice2
+      t.string :advice2
       t.string :advice3
       t.string :picture
 
