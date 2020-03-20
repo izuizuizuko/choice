@@ -4,7 +4,7 @@ class CreateHordeolums < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :company
       t.string :rank
-      t.string :point1
+      t.string :point
       t.string :pit1
       t.string :pit2
       t.string :pit3

@@ -69,6 +69,6 @@ class StrainsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def strain_params
-      params.require(:rest).permit(:name, :company, :rank, :point, :point, :pit1, :pit2, :pit3, :advice1, :avdice2, :advice3, :picture, rest_images_attributes: [:id,:image] )
+      params.require(:strain).permit(:name, :company, :rank, :point, :point, :pit1, :pit2, :pit3, :advice1, :avdice2, :advice3, :picture, strain_images_attributes: [:id,:image] )
     end
 end
