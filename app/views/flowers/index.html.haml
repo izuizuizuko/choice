@@ -1,0 +1,25 @@
+%h1 Listing flowers
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @flowers.each do |flower|
+      %tr
+        %td= flower.name
+        %td= flower.company
+       
+        %td= link_to 'Show', flower
+        %td= link_to 'Edit', edit_flower_path(flower)
+        %td= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Flower', new_flower_path

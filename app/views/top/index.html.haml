@@ -1,8 +1,21 @@
-.wrapper
-  = render "header"
-  = render "main"
-  = render "footer"
+= render "header"
 
+.top
+  .top__my
+    .top__my__question
+    %table.table
+      %thead
+        %tr
+          %th Title
+          %th 
+          -# %th{:colspan => "3"}
+      %tbody
+        - @questions.each do |question|
+          %tr
+            %td= question.title
+                
+            %td= link_to "詳細", question, class: 'btn btn-outline-dark'
+            %td= link_to '編集', edit_question_path(question), class: 'btn btn-outline-dark'
+            %td= link_to '削除', question, class: 'btn btn-outline-danger', method: :delete, data: { confirm: '本当に削除しますか?' }
 
-
-
+= render "footer"

@@ -1,0 +1,36 @@
+.top {
+  background-image: image-url("/images/qatop.jpg");
+  background-size: 50%;
+  background-position: left;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 180px);
+  margin-top: 60px;
+}
+
+.top__my {
+  height: calc(100vh - 180px);
+  margin-right: 30px;
+  width: 1000px;
+  margin-left: 400px;
+}
+
+.container {
+  width: 100wh;
+}
+
+.container__navbar-brand__title {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+  font-size: 45px;
+  padding-left: 5px;
+}
+
+.container__navbar-brand__title a {
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(28%, #45b3e0), color-stop(72%, #066fe6));
+  background: linear-gradient(to right, #45b3e0 28%, #066fe6 72%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+/*# sourceMappingURL=top.css.map */

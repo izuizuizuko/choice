@@ -1,0 +1,41 @@
+%h1 Listing hordeolums
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Rank
+
+      %th Pit1
+      %th Pit2
+      %th Pit3
+      %th Advice1
+      %th Advice2
+      %th Advice3
+      %th Picture
+      %th
+      %th
+      %th
+
+  %tbody
+    - @hordeolums.each do |hordeolum|
+      %tr
+        %td= hordeolum.name
+        %td= hordeolum.company
+        %td= hordeolum.rank
+   
+        %td= hordeolum.pit1
+        %td= hordeolum.pit2
+        %td= hordeolum.pit3
+        %td= hordeolum.advice1
+        %td= hordeolum.advice2
+        %td= hordeolum.advice3
+        %td= hordeolum.picture
+        %td= link_to 'Show', hordeolum
+        %td= link_to 'Edit', edit_hordeolum_path(hordeolum)
+        %td= link_to 'Destroy', hordeolum, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Hordeolum', new_hordeolum_path

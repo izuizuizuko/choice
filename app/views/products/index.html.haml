@@ -1,30 +1,86 @@
-%h1 Listing products
+-# .header
+-#   .header__title
+  
+-#     .header__title__icon
+-#       = link_to root_path do
+-#         = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+-#     .header__title__name
+-#       CHOICE
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Company
-      %th Class
-      %th Point
-      %th Body
-      %th 
-      %th
-      %th
+-#   .header__user
+-#     .header__user__sign
+-#       - if user_signed_in?
+-#         = link_to "/top" do
+-#           QAコーナー
+-#       - else
+-#         = link_to "/users/sign_up" do
+-#           新規会員登録
 
-  %tbody
-    - @products.each do |product|
-      %tr
-        %td= product.name
-        %td= product.company
-        %td= product.rank
-        %td= product.point
-        %td= product.body
-       
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+-#     .header__user__log
+-#       - if user_signed_in?
+-#         = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
+-#           ログアウト
+-#       - else
+-#         = link_to "/users/sign_in" do
+-#           ログイン
 
-%br
+-# - @kid.kid_images.each.with_index do |image, index|
+-#         = image_tag image.image_url, size: "400x300", class: "image-sub"
+    
 
-= link_to 'New Product', new_product_path
+
+
+-# - @products.each do |product| 
+
+  
+
+- @products.each do |product| 
+  = image_tag product.images.image.to_s, size: "200x200"
+  = product.name
+
+  = product.company
+  = product.point
+-# @question.answers.first.attributes
+-# - @images.each do |image| 
+-#   - result = image.image_url
+-# = result
+  -#   -#     -# %td= image_url product.images.to_s, size: "200x200"
+  -#     -# %td= link_to 'Show', product
+  -#  = image_tag @productimage.image_url, size: "100x100"
+  -# - @product.images each do |image|
+    /mage_tag image.image_url, size: "400x300", class: "image-sub"
+    -# %h1 Blog
+    -# - @product.each do |product| 
+    -# = image_tag(@product.images[0].image.thumb, {:style => 'width:100%; height:45;'}) 
+    -#   -.main__pick__box__lists
+        
+        -#       %thead
+      -#         %tr
+      -#           %th Name
+      -#           %th Company
+      -#           %th Point
+              
+      -#       %tbody
+            
+      -#           %tr
+                
+      -#             %td= product.name
+      -#             %td= product.company
+      -#             %td= product.point
+      -#             %td= image_url product.images.to_s, size: "200x200"
+      -#             %td= link_to 'Show', product
+                
+      -#             -# = image_tag image.image_url, size: "150x150", class: "image-sub"
+      -# -# .main__pick__box__lists__list
+      -# -#             = link_to product_path(item), class:"main__pick__box__lists__list__a" do
+      -#               .product-image
+      -#                 - if item.status != "2"
+      -#                 - else
+      -#                   .sold-date
+      -#                     %p
+      -#                 - if item.images.blank?
+      -#                 - else
+      -#                   = image_tag "#{item.images[0].image}", class: "product-image__i1
+
+
+
