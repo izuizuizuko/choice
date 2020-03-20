@@ -2,17 +2,25 @@ class ProductsController < InheritedResources::Base
   
   @@product_id = nil
 
-  def new
-    @product = Product.new
-    @product.images.build
+  # def create
+  #   image = product_params[:image]
+  #   @image = Image.new
+
+    
+  # end
+
+  # def new
+  #   @product = Product.new
+  #   @product.images.build
  
-  end
+  
   def index
-    @@product_id = params[:productId]
-    @product = Product.find_by(@products_id)
     @products = Product.all
-    @image = Image.all
-    # @product = Product.find_by(params[:id])
+    @product = Product.find_by(@products_id)
+    @images = Image.all
+  
+  #   @image = Inmage.find_by([params:image])
+  #  # @product = Product.find_by([:id])
     @productimage = Image.find_by(@products_id)
    
   end
@@ -20,10 +28,8 @@ class ProductsController < InheritedResources::Base
 
   def show  
     @product = Product.find(params[:id])
-
   end
-   
-    # @product =Image.find(@@product_id)
+  
     
 
   def edit
@@ -40,7 +46,6 @@ class ProductsController < InheritedResources::Base
   private
 
     def product_params
-
       params.require(:product).permit(:name, :company, :rank, :point, :body, images_attributes: [:id,:image] )
     end
 

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do 
+  
+  resources :rests
+  resources :strains
   root 'first#index'
   resources :questions
   resources :top
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
   resources :flowers 
   resources :hordeolums
   resources :kids
+  resources :reds
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'

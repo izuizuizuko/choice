@@ -192,6 +192,10 @@
           &__1 {
             white-space: nowrap;
             text-align:center;
+            a {
+              text-decoration: none;
+              color:white;
+            }
             .btn {
               position: relative;
               display: inline-block;
@@ -209,6 +213,10 @@
                   transform: translate(4.5px, 4.5px);
                   background-color:  rgb(245, 245, 245);;
                   color:black;
+                  a {
+                    text-decoration: none;
+                    color:black;
+                  }
               }
             }
         
@@ -217,6 +225,10 @@
           &__2 {
             white-space: nowrap;
             text-align:center;
+            a {
+              text-decoration: none;
+              color:black;
+            }
             .btn {
               position: relative;
               display: inline-block;
@@ -234,6 +246,10 @@
                   transform: translate(4.5px, 4.5px);
                   background-color: black;
                   color:white;
+                  a {
+                    text-decoration: none;
+                    color:white;
+                  }
               }
             }
         
@@ -241,6 +257,10 @@
           &__3 {
             white-space: nowrap;
             text-align:center;
+            a {
+              text-decoration: none;
+              color:white;
+            }
             .btn {
               position: relative;
               display: inline-block;
@@ -258,6 +278,10 @@
                   transform: translate(4.5px, 4.5px);
                   background-color:  rgb(245, 245, 245);;
                   color:black;
+                  a {
+                    text-decoration: none;
+                    color:black;
+                  }
               }
             }
           }

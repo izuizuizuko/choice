@@ -1,0 +1,46 @@
+= form_for @red do |f|
+  - if @red.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@red.errors.count, "error")} prohibited this red from being saved:"
+      %ul
+        - @red.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :company
+    = f.text_field :company
+  .field
+    = f.label :rank
+    = f.text_field :rank
+  .field
+    = f.label :point
+    = f.text_field :point
+  .field
+    = f.label :point
+    = f.text_field :point
+  .field
+    = f.label :pit1
+    = f.text_field :pit1
+  .field
+    = f.label :pit2
+    = f.text_field :pit2
+  .field
+    = f.label :pit3
+    = f.text_field :pit3
+  .field
+    = f.label :advice1
+    = f.text_field :advice1
+  .field
+    = f.label :avdice2
+    = f.text_field :avdice2
+  .field
+    = f.label :advice3
+    = f.text_field :advice3
+  .field
+    = f.label :picture
+    = f.text_field :picture
+  .actions
+    = f.submit 'Save'

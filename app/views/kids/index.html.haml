@@ -6,7 +6,6 @@
       %th Name
       %th Company
       %th Rank
-   
       %th Pit1
       %th Pit2
       %th Pit3
@@ -31,7 +30,10 @@
         %td= kid.advice1
         %td= kid.advice2
         %td= kid.advice3
-        %td= kid.picture
+        %td= image tag kid.image.to_s
+
+        - @kids.each do |kid| 
+          = image_tag @kidimage.to_s, size: "200x200"
         %td= link_to 'Show', kid
         %td= link_to 'Edit', edit_kid_path(kid)
         %td= link_to 'Destroy', kid, method: :delete, data: { confirm: 'Are you sure?' }

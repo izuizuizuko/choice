@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_123728) do
+ActiveRecord::Schema.define(version: 2020_03_20_034700) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -190,6 +190,75 @@ ActiveRecord::Schema.define(version: 2020_03_19_123728) do
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_reactions_on_answer_id"
     t.index ["user_id"], name: "index_reactions_on_user_id"
+  end
+
+  create_table "red_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "red_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rest_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "rest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "strain_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image"
+    t.string "strain_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "strains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "rank"
+    t.string "point"
+    t.string "pit1"
+    t.string "pit2"
+    t.string "pit3"
+    t.string "advice1"
+    t.string "advice2"
+    t.string "advice3"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

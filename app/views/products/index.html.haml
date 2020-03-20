@@ -24,15 +24,27 @@
 -#         = link_to "/users/sign_in" do
 -#           ログイン
 
+-# - @kid.kid_images.each.with_index do |image, index|
+-#         = image_tag image.image_url, size: "400x300", class: "image-sub"
+    
 
 
+
+-# - @products.each do |product| 
+
+  
 
 - @products.each do |product| 
-  = image_tag @productimage.image.to_s, size: "100x100" 
+  = image_tag product.images.image.to_s, size: "200x200"
   = product.name
+
   = product.company
   = product.point
-  -#     -# %td= image_url product.images.to_s, size: "200x200"
+-# @question.answers.first.attributes
+-# - @images.each do |image| 
+-#   - result = image.image_url
+-# = result
+  -#   -#     -# %td= image_url product.images.to_s, size: "200x200"
   -#     -# %td= link_to 'Show', product
   -#  = image_tag @productimage.image_url, size: "100x100"
   -# - @product.images each do |image|
