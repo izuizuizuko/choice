@@ -13,7 +13,7 @@ module Choice
     config.load_defaults 5.2
     config.i18n.default_locale = :ja
     config.app_generators.scaffold_controller = :scaffold_controller
-    
+ 
    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
