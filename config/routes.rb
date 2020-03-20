@@ -3,17 +3,16 @@ Rails.application.routes.draw do
  
   
   resources :questions, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :top: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :answers: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :products : [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :images : [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :contacts : [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :flowers : [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :hordeolums: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :kids: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :reds: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :rests: [:new, :create, :show, :index, :edit, :update, :destroy ]
-  resources :strains: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :top, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :answers, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :products, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :contacts, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :flowers, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :hordeolums, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :kids, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :reds, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :rests, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :strains, only: [:new, :create, :show, :index, :edit, :update, :destroy ]
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'
