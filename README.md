@@ -4,7 +4,7 @@
 QAコーナー付き眼薬検索サイト
 
 ## :globe_with_meridians:URL
-https://dropchoice.herokuapp.com/
+https://choicechoice.herokuapp.com/
 
 ## :point_up_2:説明
 * 希望のジャンルを選択後、一覧・詳細の表示
