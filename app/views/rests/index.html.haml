@@ -1,4 +1,4 @@
-%h1 Listing reds
+%h1 Listing strains
 
 %table
   %thead
@@ -7,34 +7,35 @@
       %th Company
       %th Rank
       %th Point
-      %th Point
       %th Pit1
       %th Pit2
       %th Pit3
-      
+      %th Advice1
+      %th Advice2
+      %th Advice3
       %th Picture
       %th
       %th
       %th
 
   %tbody
-    - @reds.each do |red|
+    - @rests.each do |strain|
       %tr
-        %td= red.name
-        %td= red.company
-        %td= red.rank
-        %td= red.point
-        %td= red.point
-        %td= red.pit1
-        %td= red.pit2
-        %td= red.pit3
-        
-        %td= red.advice3
-        %td= red.picture
-        %td= link_to 'Show', red
-        %td= link_to 'Edit', edit_red_path(red)
-        %td= link_to 'Destroy', red, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= strain.name
+        %td= strain.company
+        %td= strain.rank
+        %td= strain.point
+        %td= strain.pit1
+        %td= strain.pit2
+        %td= strain.pit3
+        %td= strain.advice1
+        %td= strain.advice2
+        %td= strain.advice3
+        %td= strain.picture
+        %td= link_to 'Show', strain
+        %td= link_to 'Edit', edit_strain_path(strain)
+        %td= link_to 'Destroy', strain, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Red', new_red_path
+= link_to 'New Strain', new_strain_path
