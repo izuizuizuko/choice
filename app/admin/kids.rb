@@ -1,6 +1,5 @@
 ActiveAdmin.register Kid do
 
-  
   form do |f|
     f.inputs '商品' do
       f.input :name
