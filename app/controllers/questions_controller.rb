@@ -66,7 +66,7 @@ class QuestionsController < ApplicationController
    
   def destroy
     @question.destroy
-    redirect_to top_index_path if @question.destroy && @question.user_id == @question_user.id 
+    redirect_to top_index_path 
   end
 
   private
