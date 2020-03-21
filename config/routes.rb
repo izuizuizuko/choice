@@ -1,27 +1,25 @@
 Rails.application.routes.draw do 
   root 'first#index'
-  resources :top, only: [:new, :show, :index, :edit] 
-
-  resources :questions
-  resources :answers
-  resources :products  
-  resources :images 
-  resources :contacts 
-  resources :flowers
-  resources :hordeolums
-  resources :kids
-  resources :red
-  resources :rests
-  resources :strains
-
+ 
+  
+  resources :questions, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :top, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :answers, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :products, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :contacts, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :flowers, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :hordeolums, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :kids, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :reds, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :rests, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :strains, only: [:new, :create, :show, :index, :edit, :update, :destroy]
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions'
   }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
- 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 
 end
 
