@@ -57,6 +57,7 @@ gem 'paperclip'
 
 
 group :production do
+  gem "pg", ">= 1.2.3"
   gem 'unicorn', '5.4.1'
 
 end
