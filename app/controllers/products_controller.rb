@@ -44,6 +44,7 @@ class ProductsController < InheritedResources::Base
 
   def update
     @product = Product.find(params[:id])
+    @produc.update params.require(:product).permit(:content, :image) 
   end
 
 
