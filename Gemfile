@@ -52,13 +52,19 @@ group :development do
 end
 
 gem 'carrierwave'
-gem 'fog-aws'
+
 gem 'paperclip'
 
 
 group :production do
-  gem "pg", ">= 1.2.3"
+
   gem 'unicorn', '5.4.1'
+
+
+
+
+  gem 'fog-aws'
+  gem 'rails_12factor', '0.0.2'
 
 end
 
