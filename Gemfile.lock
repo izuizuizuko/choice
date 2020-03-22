@@ -250,7 +250,6 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.2.3)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
     popper_js (1.16.0)
@@ -387,7 +386,6 @@ DEPENDENCIES
   mini_magick
   mysql2 (= 0.5.3)
   paperclip
-  pg (>= 1.2.3)
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
