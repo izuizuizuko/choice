@@ -1,40 +1,52 @@
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark{:style => "background-color:black;"}
 
-  
+  .container
+    .container__navbar-brand
+      .container__navbar-brand__icon
+        = link_to root_path do
+          = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .container__navbar-brand__title  
+      = link_to "CHOICE", "top" 
 
-- @products.each do |product| 
-  -# = image_tag product.images.image.to_s, size: "200x200"
-  = product.name
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          %span.nav-link{:style => "color:white;"}
+            ようこそ！&nbsp;&nbsp;#{current_user.name}&nbsp;さん
+        %li.nav-item
+          %li.nav-item.ml-2
+            = link_to '質問一覧', "/questions", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "質問する", "/questions/new", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "回答する", "/answers", class: "btn btn-outline-light"
+          %li.nav-item.ml-2
+            = link_to "ログアウト", "/users/sign_out", class: "btn btn-outline-danger", :method => :delete
+= yield
 
-  = product.company
-  = product.point
--# @question.answers.first.attributes
-%h1 Listing reds
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Company
-      %th Rank
-      %th Point
-      %th Point
-      %th Pit1
-      %th Pit2
-      %th Pit3
+.pro
+  .col-md-12{:class => "offset-md-６"}
+    %div{:block => ""}
+      %table.table.table-hover
+        %thead.thead-light
+          %tr
+            %th 商品名
+            %th Title
+            %th 詳細
+        %tbody
+          - @products.each do |product|
+            %tr
+              %td= product.name
       
-      %th Picture
-      %th
-      %th
-      %th
-
-  %tbody
-    - @reds.each do |red|
-      %tr
-        %td= red.name
-        %td= red.company
-        %td= red.rank
-        %td= red.point
-        %td= red.point
-        %td= red.pit1
-        %td= red.pit2
-        %td= red.pit3
+              %td
+                [ #{link_to 'Edit', admin_product_path ]
+              %td
+                -# [ #{link_to 'Delete', question_path(question), method: :delete, data:{ confirm: 'Are you sure?' }} ]
+      .btn-toolbar
+        .btn-group
+          -# = button_to "New Question" , {controller: 'questions', action: 'new'}, {method: :get,class: "btn-outline-dark btn-lg"}
+          %br/
+          %br/
+          %br/
