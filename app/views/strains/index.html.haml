@@ -1,41 +1,55 @@
-%h1 Listing strains
+.header
+  .header__title
+  
+    .header__title__icon
+      = link_to root_path do
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .header__title__name
+      CHOICE
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Company
-      %th Rank
-      %th Point
-      %th Pit1
-      %th Pit2
-      %th Pit3
-      %th Advice1
-      %th Advice2
-      %th Advice3
-      %th Picture
-      %th
-      %th
-      %th
+  .header__user
+    .header__user__back
+      - if user_signed_in?
+        = link_to root_path do
+          TOP
 
-  %tbody
-    - @strains.each do |strain|
-      %tr
-        %td= strain.name
-        %td= strain.company
-        %td= strain.rank
-        %td= strain.point
-        %td= strain.pit1
-        %td= strain.pit2
-        %td= strain.pit3
-        %td= strain.advice1
-        %td= strain.advice2
-        %td= strain.advice3
-        %td= strain.picture
-        %td= link_to 'Show', strain
-        %td= link_to 'Edit', edit_strain_path(strain)
-        %td= link_to 'Destroy', strain, method: :delete, data: { confirm: 'Are you sure?' }
+    .header__user__sign
+      - if user_signed_in?
+        = link_to "/top" do
+          QAコーナー
+      - else
+        = link_to "/users/sign_up" do
+          新規会員登録
 
-%br
+    .header__user__log
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
+          ログアウト
+      - else
+        = link_to "/users/sign_in" do
+          ログイン
+    
+    
+    
+    
 
-= link_to 'New Strain', new_strain_path
+.pro.container
+  .pro.col-md-12
+    %div{:block => ""}
+      %table.table.table-hover
+        %thead.text-white.display-2.bg-dark.font-weight-bold
+          %tr{:style => "font-size: 1.5rem"}
+            %th 商品名
+            %th 販売元
+            %th おすすめポイント
+            %th 
+            %th 
+            %th 
+        %tbody
+          - @strains.each do |strain|
+            %tr.align-self-center
+              %td= strain.name
+              %td= strain.company
+              %td= strain.point
+              %td= link_to '詳細', strain, class: "btn btn-outline-dark"
+      
