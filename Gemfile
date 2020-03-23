@@ -60,10 +60,6 @@ gem 'paperclip'
 group :production do
   gem 'pg'
   gem 'unicorn', '5.4.1'
-
-
-
-
   gem 'fog-aws'
   gem 'rails_12factor', '0.0.2'
 
@@ -92,3 +88,4 @@ gem 'activeadmin'
 gem 'ransack'
 gem 'mini_magick'
 gem "aws-sdk-s3", require: false
+gem 'fog', '~> 1.41.0'
