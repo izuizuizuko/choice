@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_043028) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", limit: 11
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end

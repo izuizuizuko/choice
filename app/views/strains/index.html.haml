@@ -38,16 +38,13 @@
     %div{:block => ""}
       %table.table.table-hover
         %thead.text-white.display-2.bg-dark.font-weight-bold
-          %tr{:style => "font-size: 1.5rem"}
+          %tr
             %th 商品名
             %th 販売元
-            %th おすすめポイント
-            %th 
-            %th 
-            %th 
+            %th おすすめポイント 
         %tbody
           - @strains.each do |strain|
-            %tr.align-self-center
+            %tr
               %td= strain.name
               %td= strain.company
               %td= strain.point

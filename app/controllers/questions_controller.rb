@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  # before_action :set_question, only: [:show, :edit, :update, :destroy]
   @@user_type = nil
   # GET /questions
   # GET /questions.json
@@ -18,7 +18,13 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
+    @answers = @question.answers.includes(:user)
   end
+
+  
+
 
   # GET /questions/new
   def new 
@@ -31,7 +37,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @tags = Tag.all
-    
+    @question = Question.find(params[:id])
   end
 
   # POST /questions
@@ -73,9 +79,9 @@ class QuestionsController < ApplicationController
 
   private
  
-  def set_question
-    @question = Question.find(params[:id])
-  end
+  # def set_question
+  #   @question = Question.find(params[:id])
+  # end
  
   def question_params
     params.require(:question).permit(:user_id, :title, :body, :best_answer_id, {:tag_ids => []})
