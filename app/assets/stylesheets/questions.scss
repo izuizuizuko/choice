@@ -93,7 +93,62 @@
         margin-top: 20px;
     }
   }
+  .containernew {
+    input[type="text"] {
+      width: 470px;
+      height: 40px;
+      margin-bottom: 20px;
+      margin-top: 80px;
+  }
+   
+    margin: 80px;
+    width: 100%;
+    height: 100vh;
+    margin-top: 20px;
+    position: fixed;
 
+    &__card-title {
+      height: 100%;
+      margin-top: 100px;
+    
+      &__top {
+        height: 100%;
+        margin-top: 0px;
+        overflow: auto; 
+        text-align: center;
+        
+        &___text {
+         
+    
+          &__textarea {
+            &__field {
+              width: 250px;
+              height: 10em;
+
+            }
+    
+          
+            }
+         
+        }
+       
+            
+
+        }
+        &__answer {
+            // display: inline-block;
+            margin: 0 auto;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    }
+    &__card-body { 
+
+    }
+    &__row {
+        margin-top: 20px;
+    }
+  }
 
 
 .user_color {

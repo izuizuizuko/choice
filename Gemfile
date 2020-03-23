@@ -40,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'mysql2', '0.5.3'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -52,13 +53,20 @@ group :development do
 end
 
 gem 'carrierwave'
-gem 'fog-aws'
+
 gem 'paperclip'
 
 
 group :production do
-  gem 'unicorn', '5.4.1'
   gem 'pg'
+  gem 'unicorn', '5.4.1'
+
+
+
+
+  gem 'fog-aws'
+  gem 'rails_12factor', '0.0.2'
+
 end
 
 group :test do
@@ -83,3 +91,4 @@ gem 'devise'
 gem 'activeadmin'
 gem 'ransack'
 gem 'mini_magick'
+gem "aws-sdk-s3", require: false

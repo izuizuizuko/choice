@@ -8,6 +8,11 @@
       CHOICE
 
   .header__user
+    .header__user__back
+      - if user_signed_in?
+        = link_to root_path do
+          TOP
+
     .header__user__sign
       - if user_signed_in?
         = link_to "/top" do

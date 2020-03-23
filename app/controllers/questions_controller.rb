@@ -31,6 +31,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @tags = Tag.all
+    
   end
 
   # POST /questions
@@ -51,22 +52,23 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html {redirect_to @question, notice: 'Question was successfully updated.'}
-        format.json {render :show, status: :ok, location: @question}
-      else
-        format.html {render :edit}
-        format.json {render json: @question.errors, status: :unprocessable_entity}
-      end
-    end
+    redirect_to "/questions"
+    # respond_to do |format|
+    #   if @question.update(question_params)
+    #     format.html {redirect_to @question, notice: 'Question was successfully updated.'}
+    #     format.json {render :show, status: :ok, location: @question}
+    #   else
+    #     format.html {render :edit}
+    #     format.json {render json: @question.errors, status: :unprocessable_entity}
+    #   end
+    # end
   end
  
 
    
   def destroy
     @question.destroy
-    redirect_to top_index_path 
+    redirect_to "/questions"
   end
 
   private

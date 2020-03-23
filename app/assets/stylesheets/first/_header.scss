@@ -48,6 +48,8 @@
         color: transparent;
     }
   }
+  
+  
   &__user {
     display: flex;
     
@@ -76,7 +78,21 @@
       font-family: 'M PLUS Rounded 1c', sans-serif;
       font-weight: bold;
     }
+    
+    &__back {
+      a {
+        text-decoration: none; 
+        color: white;
+      }
+      text-decoration: none;
+      margin: auto;
+      padding-right: 20px;
+      font-size: 15px;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-weight: bold;
+      
+    }
 
+    }
 
   }
-}

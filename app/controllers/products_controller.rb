@@ -9,10 +9,11 @@ class ProductsController < InheritedResources::Base
     
   # end
 
-  # def new
-  #   @product = Product.new
-  #   @product.images.build
- 
+  def new
+    @product = Product.new
+    @product.images.build
+  
+  end
   
   def index
     @products = Product.all
@@ -29,7 +30,10 @@ class ProductsController < InheritedResources::Base
   def show  
     @product = Product.find(params[:id])
   end
-  
+   def create
+    @product = Product.create params.require(:product).permit(:content, :image) 
+   end
+
     
 
   def edit
@@ -40,6 +44,7 @@ class ProductsController < InheritedResources::Base
 
   def update
     @product = Product.find(params[:id])
+    @produc.update params.require(:product).permit(:content, :image) 
   end
 
 
