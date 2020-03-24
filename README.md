@@ -57,6 +57,7 @@ https://choicechoice.herokuapp.com/　
 * AWS
 * EC2
 * Github
+* Heroku
 
 ## :mag:テスト
 今後実施予定 :soon:
