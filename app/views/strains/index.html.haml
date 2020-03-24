@@ -1,6 +1,5 @@
 .header
   .header__title
-  
     .header__title__icon
       = link_to root_path do
         = icon('fas fa-3x','fa-tint', class: 'fa-tint')
@@ -38,7 +37,7 @@
     %div{:block => ""}
       %table.table.table-hover
         %thead.text-white.display-2.bg-dark.font-weight-bold
-          %tr
+          %tr{:style => "font-size: 1.5rem"}
             %th 商品名
             %th 販売元
             %th おすすめポイント 
@@ -49,4 +48,5 @@
               %td= strain.company
               %td= strain.point
               %td= link_to '詳細', strain, class: "btn btn-outline-dark"
+      
       
