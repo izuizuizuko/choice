@@ -4,7 +4,7 @@
 QAコーナー付き眼薬検索サイト
 
 ## :globe_with_meridians:URL
-<b
+<br>
 https://choicechoice.herokuapp.com/　
 
 ## :earth_asia:背景
