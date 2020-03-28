@@ -1,0 +1,55 @@
+.header
+  .header__title
+  
+    .header__title__icon
+      = link_to root_path do
+        = icon('fas fa-3x','fa-tint', class: 'fa-tint')
+    .header__title__name
+      CHOICE
+
+  .header__user
+    .header__user__back
+      - if user_signed_in?
+        = link_to root_path do
+          TOP
+
+    .header__user__sign
+      - if user_signed_in?
+        = link_to "/top" do
+          QAコーナー
+      - else
+        = link_to "/users/sign_up" do
+          新規会員登録
+
+    .header__user__log
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class:".logout__box__bm" do 
+          ログアウト
+      - else
+        = link_to "/users/sign_in" do
+          ログイン
+    
+    
+    
+    
+
+.pro.container
+  .pro.col-md-12
+    %div{:block => ""}
+      %table.table.table-hover
+        %thead.text-white.display-2.bg-dark.font-weight-bold
+          %tr{:style => "font-size: 1.5rem"}
+            %th 商品名
+            %th 販売元
+            %th おすすめポイント
+            %th 
+            %th 
+            %th 
+        %tbody
+          - @hordeolums.each do |hordeoulum|
+            %tr.align-self-center
+              %td= hordeoulum.name
+              %td= hordeoulum.company
+              %td= hordeoulum.point
+              %td= link_to '詳細', hordeoulum, class: "btn btn-outline-dark"
+      

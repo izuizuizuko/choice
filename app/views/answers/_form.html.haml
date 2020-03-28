@@ -1,0 +1,20 @@
+-# = form_for @answer do |f|
+-#   - if answer.errors.any?
+-#     #error_explanation
+-#       %h2
+-#         = pluralize(answer.errors.count, "error")
+-#         prohibited this answer from being saved:
+-#       %ul
+-#         - answer.errors.full_messages.each do |message|
+-#           %li= message
+-#   .field
+-#     = f.label :body
+-#     = f.text_area :body
+-#   .actions
+-#     = f.submit
+-# z
+= form_with(model: [question, answer] ) do |form|
+  %div
+    = form.text_area :answer_body
+  .actions
+    = form.submit "コメントをする"

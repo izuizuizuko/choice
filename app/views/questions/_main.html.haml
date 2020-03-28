@@ -1,0 +1,14 @@
+.container
+  %header.jumbotron.my-4
+    %h1.display-3 Questions
+    = link_to '質問する！', new_question_path, class: 'btn btn-primary btn-lg'
+  .row.text-center
+    - @questions.each do |question|
+      .col-lg-3.col-md-6.mb-4
+        .card.h-100
+          %img.card-img-top{:alt => "", :src => "http://placehold.it/500x325"}/
+          .card-body
+            %h4.card-title= question.title
+            %p.card-text= question.body
+          .card-footer
+            = link_to '詳細', question

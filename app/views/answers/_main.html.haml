@@ -1,0 +1,20 @@
+%body
+.container
+  .container__box 
+    .container__box.display-3 質問一覧
+    
+    .row.text-center
+      %table.table
+        %thead
+          %tr
+            %th Title
+            %th 内容
+        %tbody
+          - @questions.each do |question|
+            %tr
+              %td= question.title
+              %td= question.body 
+              %td= link_to "詳細", question, class: 'btn btn-outline-dark'
+            
+
+

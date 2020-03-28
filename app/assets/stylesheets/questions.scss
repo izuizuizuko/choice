@@ -1,0 +1,188 @@
+
+.questions {
+    background-image: none;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    &__body {
+        width: 100%;
+    }
+}
+
+
+.__box {
+    width: 100%;
+    height: 100%;
+    background-color: lawngreen;
+}
+
+.navbar{
+    height: 100px;
+    padding: 0 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;   
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      &__icon {
+        a {
+          text-decoration: none; 
+          color: rgba(69,179,224,1);
+        }
+        margin: auto;
+      }
+
+      &__name {
+        a {
+          text-decoration: none; 
+          background: linear-gradient( to right,  rgb(69,179,224) 28%, rgb(6, 111, 230) 72% );
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+        margin: auto;
+        font-family: 'Indie Flower', cursive;
+        font-weight: bold;
+        font-size: 35px;
+        padding-left: 5px;
+
+      }
+      }
+  }
+    
+  .containerindex{
+    overflow: scroll;
+    display: flex;
+    margin: auto; 
+    margin-top: 150px;
+  }
+
+  .showanswer {
+  
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    margin: 0 auto;
+
+    &__top {
+      margin: 0 auto;
+      width: 900px;
+      height: 100vh;
+      margin-top: 130px;
+    
+
+        &__title {
+          width: 100%;
+           font-family: 'M PLUS Rounded 1c', sans-serif;
+           font-weight: bold;
+            margin-top: 0px;
+            overflow: auto; 
+            display: inline-block;
+            font-size: 25px;
+            background: linear-gradient(transparent 70%, rgb(0, 106, 255) 70%);
+        }
+        &__question {
+          width: 100%;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 15px;
+            font-size: 23px;
+        }
+        &__name {
+          width: 100%;
+          font-family: 'M PLUS Rounded 1c', sans-serif;
+          font-weight: bold;;
+          margin: 0 auto;
+          margin-top: 15px;
+          font-size: 20px;
+          margin-bottom: 20px;
+      }
+        &__answer {
+          width: 100%;
+        }
+    }
+   
+  }
+  .containernew {
+    input[type="text"] {
+      width: 470px;
+      height: 40px;
+      margin-bottom: 20px;
+      margin-top: 80px;
+  }
+   
+    margin: 80px;
+    width: 100%;
+    height: 100vh;
+    margin-top: 20px;
+    position: fixed;
+
+    &__card-title {
+      height: 100%;
+      margin-top: 100px;
+    
+      &__top {
+        height: 100%;
+        margin-top: 0px;
+        overflow: auto; 
+        text-align: center;
+        
+        &___text {
+         
+    
+          &__textarea {
+            &__field {
+              width: 250px;
+              height: 10em;
+
+            }
+    
+          
+            }
+         
+        }
+       
+            
+
+        }
+        &__answer {
+            // display: inline-block;
+            margin: 0 auto;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    }
+    &__card-body { 
+
+    }
+    &__row {
+        margin-top: 20px;
+    }
+  }
+
+
+.user_color {
+    background-color: blue;
+    color: white;
+}
+
+.ba-parent {
+    
+    position: relative;
+    .ba-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+.best-answer{
+    background-color: red;
+    color: white;
+}
